@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\{
     CategoryController,
     ProductController
 };
+use App\Http\Controllers\Site\ProductController as SiteProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,8 +44,12 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::put('products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
     
-    
 });
+
+
+Route::get('/', [SiteProductController::class, 'index'])->name('site.index');
+Route::get('/products/{product}', [SiteProductController::class, 'show'])->name('site.products.show');
+
 
 
 

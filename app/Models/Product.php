@@ -21,4 +21,9 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function mainImageUrl()
+    {
+        return $this->images()->first() ? $this->images()->first()->url : '';
+    }
 }
