@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{
+use App\Http\Controllers\Admin\{
     CategoryController,
     ProductController
 };
@@ -26,7 +26,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->prefix('admin')->group(function () {
     
     /* Categories */
     Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');

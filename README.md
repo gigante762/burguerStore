@@ -33,7 +33,7 @@ Simple Burger Store where you can order your burguer and pay on delivery
   
 
 ## Protect Cruds (Product, Images, Categories) with auth middleware
- - [ ] Use middleware auth to protect cruds
+ - [x] Use middleware auth to protect cruds
 
 ### Cart System
 - [ ] Show cart
