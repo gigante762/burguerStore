@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -26,6 +28,37 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('products.index');
+    }
 
+    public function uploadImage(Request $request, Product $product)
+    {
+        foreach ($request->images as $image) {
+            if($image->isValid())
+            {
+                $path = $image->store('images','public');
+
+                $i = Image::create([
+                    'path' => $path,
+                    'url' => url('storage') .'/'. $path,
+                    'product_id' => $product->id
+                ]);
+
+                $product->images()->attatch($i->id);
+            }
+        }
+
+        return redirect()->route('products.index');
+    }
+
+    public function deleteImage(Request $request, Product $product)
+    {
+        // just one image
+        $image = $product->images()->where('id', $request->image_id)->first();
+        
+        Storage::disk('public')->delete($image->path);
+        
+        $image->delete();
+
+        return redirect()->route('products.index');
     }
 }
