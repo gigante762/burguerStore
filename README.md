@@ -15,11 +15,15 @@ Simple Burger Store where you can order your burguer and pay on delivery
   - [x] Delete categories
 
 ### Products
-- [ ] Create Products table, model, controller
-  - [ ] migration( name, price, description, category )
-  - [ ] ProductFactory 
-  - [ ] model relationship with category
-  - [ ] model relationship with images
+- [x] Create Products table, model, controller
+  - [x] migration( name, price, description, category )
+  - [x] Create Product
+  - [x] Show Product
+  - [x] Update Product
+  - [x] Delete Product
+  - [x] ProductFactory 
+  - [x] model relationship with category
+  - [x] model relationship with images
 
 ### Images
 - [ ] Create Imagens table, model
