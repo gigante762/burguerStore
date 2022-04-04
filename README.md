@@ -4,15 +4,15 @@ Simple Burger Store where you can order your burguer and pay on delivery
 # Todos 
 
 ### Login
-- [ ] Create login system with breeze
+- [x] Create login system with breeze
 
 ### Categories 
-- [ ] Create categories migration model, controller
-  - [ ] Categories migration with name
-  - [ ] Create Categories
-  - [ ] Show Categories
-  - [ ] Update Categories
-  - [ ] Delete categories
+- [x] Create categories migration model, controller
+  - [x] Categories migration with name
+  - [x] Create Categories
+  - [x] Show Categories
+  - [x] Update Categories
+  - [x] Delete categories
 
 ### Products
 - [ ] Create Products table, model, controller
