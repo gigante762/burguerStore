@@ -26,8 +26,8 @@ Simple Burger Store where you can order your burguer and pay on delivery
   - [x] model relationship with images
 
 ### Images
-- [ ] Create Imagens table, model
-  - [ ] migration (path, product_id)
+- [x] Create Imagens table, model
+  - [x] migration (path, product_id)
 
 ## Protect Cruds (Product, Images, Categories) with auth middleware
  - [ ] Use middleware auth to protect cruds
