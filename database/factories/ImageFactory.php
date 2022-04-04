@@ -18,8 +18,11 @@ class ImageFactory extends Factory
     public function definition()
     {
         // https://foodish-api.herokuapp.com/api/images/burge
+        $image = Http::get('https://foodish-api.herokuapp.com/api/images/burger')->json()['image'];
+        
         return [
-            'path' => Http::get('https://foodish-api.herokuapp.com/api/images/burger')->json()['image'],
+            'path' => $image,
+            'url' => $image,
             'product_id' => '1',
         ];
     }

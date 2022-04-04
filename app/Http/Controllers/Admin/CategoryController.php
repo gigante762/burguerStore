@@ -8,10 +8,15 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
+    public function index()
+    {
+        return Category::all();
+    }
+
     public function store(Request $request)
     {
        Category::create($request->only('name'));
-
 
        return redirect()->route('categories.index');
     }
