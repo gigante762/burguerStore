@@ -2,9 +2,10 @@
 
 use App\Http\Controllers\Admin\{
     CategoryController,
-    ProductController
+    ProductController,
+    OrderController
 };
-use App\Http\Controllers\OrderController;
+
 use App\Http\Controllers\Site\OrderController as SiteOrderController;
 use App\Http\Controllers\Site\ProductController as SiteProductController;
 use Illuminate\Support\Facades\Route;

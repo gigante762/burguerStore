@@ -10,8 +10,6 @@ class OrderTest extends TestCase
 {
     use RefreshDatabase;
 
-
-
     /**
      * @test
      */
