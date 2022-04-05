@@ -48,6 +48,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::delete('products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
     
     /* Orders */
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::put('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
     Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->name('orders.destroy');
 
@@ -60,9 +61,6 @@ Route::get('/products/{product}', [SiteProductController::class, 'show'])->name(
 /* Orders */
 Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 Route::get('/orders/{order:code}', [SiteOrderController::class, 'show'])->name('site.orders.show');
-
-
-
 
 
 require __DIR__ . '/auth.php';

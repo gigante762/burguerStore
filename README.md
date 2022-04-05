@@ -60,8 +60,8 @@ It will generate an order id, and the user must to see the status of the id
 - [x] order status
 - [x] update status and delete order
 - [x] customer see their order
-- [ ] admin see all orders
-- [ ] send text message to the customer,when a order status change
+- [x] admin see all orders
+- [ ] send text message to the customer, when a order status change
 
 
 

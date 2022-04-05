@@ -114,4 +114,17 @@ class OrderTest extends TestCase
 
         $this->get(route('site.orders.show', $order->code))->assertSuccessful();
     }
+
+    /** @test */
+    public function it_should_be_able_to_view_all_orders()
+    {
+        $this->get(route('orders.index'))->assertForbidden();
+
+        
+        $user = \App\Models\User::factory()->create();
+        $this->actingAs($user)
+        ->get(route('orders.index'))->assertSuccessful();
+
+
+    }
 }
