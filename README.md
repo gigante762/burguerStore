@@ -61,8 +61,11 @@ Simple Burger Store where you can order your burguer and pay on delivery
 It will generate an order id, and the user must to see the status of the id
 (Aguardando, em preparo, enviado, concluído) 
 ['pending', 'processing', 'shipped', 'delivered', 'canceled']
-- [ ] All the data above in 'inputs'
-- [ ] order status
+- [x] All the data above in 'inputs'
+- [x] order status
+- [x] update status and delete order
+- [ ] send text message to the customer,when a order status change
+
 
 
 

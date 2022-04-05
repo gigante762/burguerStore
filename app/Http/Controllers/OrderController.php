@@ -24,4 +24,21 @@ class OrderController extends Controller
         return response()->json(['message' => 'Order created successfully!'], 201);
     }
 
+    public function update(Request  $request, Order $order)
+    {
+        $order->update($request->all());
+
+
+        return redirect()->route('orders.index');
+    }
+
+    public function destroy(Request  $request, Order $order)
+    {
+        $order->delete();
+
+        return redirect()->route('orders.index');
+    }
+
+
+
 }

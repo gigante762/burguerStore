@@ -45,6 +45,10 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::put('products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
     
+    /* Orders */
+    Route::put('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
+    Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->name('orders.destroy');
+
 });
 
 /* Site */

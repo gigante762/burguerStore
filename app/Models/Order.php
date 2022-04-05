@@ -22,4 +22,10 @@ class Order extends Model
         'cart',
 
     ];
+
+
+    public function scopeNotDone($query)
+    {
+        return $query->whereNot('status', 'delivered');
+    }
 }
