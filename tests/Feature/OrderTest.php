@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Event;
@@ -128,10 +129,13 @@ class OrderTest extends TestCase
     }
 
 
-    /** It's giving error, but it works. I'll keep it for future fixes **/
+    /** @test 
+     * It's giving error, but it works. I'll keep it for future fixes **/
     public function custmer_should_be_notified_when_order_updated()
     {
+        $inititalEvent = Event::getFacadeRoot();
         Event::fake();
+        Model::setEventDispatcher($inititalEvent);
         
         $order =  \App\Models\Order::class::factory()->create(['status'=>'pending']);
         
