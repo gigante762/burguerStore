@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\{
     ProductController
 };
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\Site\OrderController as SiteOrderController;
 use App\Http\Controllers\Site\ProductController as SiteProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -57,6 +58,7 @@ Route::get('/products/{product}', [SiteProductController::class, 'show'])->name(
 
 /* Orders */
 Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
+Route::get('/orders/{order:code}', [SiteOrderController::class, 'show'])->name('site.orders.show');
 
 
 

@@ -12,7 +12,7 @@ class OrderController extends Controller
         $data = $request->all();
 
         $data['status'] = 'pending';
-        $data['code'] = 'P'.rand(1,100);
+        $data['code'] = uniqid('ID#');
         $data['total_price'] = rand(1,100);
         $data['cart'] = '{"1":{"id":1,"name":"Product 1","price":"10.00","quantity":1},"2":{"id":2,"name":"Product 2","price":"20.00","quantity":1}}';
 

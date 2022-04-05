@@ -92,6 +92,7 @@ class OrderTest extends TestCase
             'id' => $order->id,
             'status' => 'processing',
         ]);
+
     }
 
     /** @test */
@@ -106,5 +107,13 @@ class OrderTest extends TestCase
         $this->assertDatabaseMissing('orders', [
             'id' => $order->id,
         ]);
+    }
+
+    /** @test */
+    public function customer_should_be_able_to_see_their_order()
+    {
+        $order =  \App\Models\Order::class::factory()->create();
+
+        $this->get(route('site.orders.show', $order->code))->assertSuccessful();
     }
 }
