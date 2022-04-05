@@ -42,20 +42,15 @@ Simple Burger Store where you can order your burguer and pay on delivery
 
 ### Checkout and Orders
 #### inputs
-- [ ] Buyer 
-  - [ ] Name
-  - [ ] Phone number
-- [ ] Payment
-  - [ ] Payment method (pay on delivery cash, pay on delivery credit card)
-  - [ ] Price
+  - [x] Name
+  - [x] Phone number
+  - [x] Payment method (pay on delivery cash, pay on delivery credit card)
 - [ ] Cart
   - [ ] Send itens by text, with product name quantity and price like a ticket
-  - [ ] Total price
-  - [ ] Observation about the delivery ( without lettuce... )
-- [ ] Address
-  - [ ] street
-  - [ ] number
-  - [ ] complement
+  - [x] Total price
+  - [x] Observation about the delivery ( without lettuce... )
+  - [x] Address (street, number)
+  - [x] Address_complement
 
 ## Orders 
 It will generate an order id, and the user must to see the status of the id
