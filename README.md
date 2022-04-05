@@ -59,7 +59,8 @@ Simple Burger Store where you can order your burguer and pay on delivery
 
 ## Orders 
 It will generate an order id, and the user must to see the status of the id
-(Aguardando, em preparo, enviado, concluído)
+(Aguardando, em preparo, enviado, concluído) 
+['pending', 'processing', 'shipped', 'delivered', 'canceled']
 - [ ] All the data above in 'inputs'
 - [ ] order status
 
