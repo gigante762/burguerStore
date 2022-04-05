@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -35,7 +34,6 @@ class OrderController extends Controller
     {
         $order->update($request->all());
 
-
         return redirect()->route('orders.index');
     }
 
@@ -45,7 +43,4 @@ class OrderController extends Controller
 
         return redirect()->route('orders.index');
     }
-
-
-
 }

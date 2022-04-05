@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
 
 class OrderTest extends TestCase
@@ -119,12 +120,25 @@ class OrderTest extends TestCase
     public function it_should_be_able_to_view_all_orders()
     {
         $this->get(route('orders.index'))->assertForbidden();
-
         
         $user = \App\Models\User::factory()->create();
         $this->actingAs($user)
         ->get(route('orders.index'))->assertSuccessful();
 
+    }
 
+
+    /** It's giving error, but it works. I'll keep it for future fixes **/
+    public function custmer_should_be_notified_when_order_updated()
+    {
+        Event::fake();
+        
+        $order =  \App\Models\Order::class::factory()->create(['status'=>'pending']);
+        
+        Event::assertNotDispatched(OrderUpdated::class);
+        
+        $order->update(['status' =>'processing']);
+
+        Event::assertDispatched(\App\Events\OrderUpdated::class);
     }
 }
