@@ -24,6 +24,6 @@ class Product extends Model
 
     public function mainImageUrl()
     {
-        return $this->images()->first() ? $this->images()->first()->url : '';
+        return $this->images[0]->url ?? '';
     }
 }
